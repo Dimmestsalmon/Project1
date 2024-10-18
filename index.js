@@ -1,10 +1,17 @@
-const getData = (input) => {
-  fetch (`https://swapi.dev/api/people/?search=${input}`)
+
+
+const getData = (inputValue) => {
+  fetch (`https://swapi.dev/api/people/?search=${inputValue}`)
   .then(response => response.json())
-  .then(jsonData => console.log(jsonData))
+  .then(jsonData => document.querySelector("body").innerHTML +=
+    `<ul>
+      <li>Name: ${jsonData.results[0].name}</li>
+    <ul>`
+    )
 }
 
-function searchData(){
-  var inputValue = document.querySelector("#searchField").value;
-  console.log(inputValue);
+const searchData = () => {
+  let inputValue = document.querySelector("#searchField").value;
+  return inputValue
 }
+
