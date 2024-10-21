@@ -8,13 +8,11 @@ const getData = (inputValue) => {
       return fetch(person.homeworld)
         .then(response => response.json())
         .then(homeWorldData => {
-          document.querySelector("body").innerHTML +=
-          `<ul>
-              <li>Name: ${person.name}</li>
+          document.querySelector("#newList").innerHTML +=
+          `<li>Name: ${person.name}</li>
               <li>Height: ${person.height}</li>
               <li>Eye Color: ${person.eye_color}</li>
-              <li class = "homeworld"> Homeworld: ${homeWorldData.name}</li>
-            </ul>`
+              <li class = "homeworld"> Homeworld: ${homeWorldData.name}</li>`
           document.querySelector(".homeworld").addEventListener('click', function(){
             loadPlanet(person.homeworld)
             })
@@ -26,9 +24,9 @@ const loadPlanet = (input) => {
   fetch(input)
   .then (response => response.json())
   .then (homeWorld => {
-    document.querySelector("body").innerHTML +=
+    document.querySelector("#newList").innerHTML +=
       `<ul>
-        <li>Name: ${homeWorld.name}</li>
+        <li>Planet: ${homeWorld.name}</li>
         <li>Terrain: ${homeWorld.terrain}</li>
         <li>Population: ${homeWorld.population}</li>
       </ul>`
@@ -41,6 +39,13 @@ const searchData = () => {
   return inputValue
 }
 
+const reload = () => {
+  document.querySelector("#newList").innerHTML =
+  `<ul id="newList">
+  </ul>`
+}
+
+document.querySelector('#main').addEventListener('play', setHalfVolume);
 
 
 

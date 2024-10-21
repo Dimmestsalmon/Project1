@@ -12,9 +12,12 @@
   <form id="searchForm">
     <input id="searchField" type="text" oninput="searchData()" value = "Jar Jar Binks"/>
     <button id="searchButton" type="button" onclick = "getData(searchData())">Search</button>
-    <button id="clearButton" type="button" onClick="window.location.reload();">Clear Search Data</button>
+    <button id="clearButton" type="button" onClick="reload();">Clear Search Data</button>
   </form>
 
+  <ul id="newList">
+  </ul>
+
 </body>
-<audio play src ="./mainTheme.mp3"/>
+<audio  src = "./mainTheme.mp3" />
 </html>
