@@ -45,7 +45,5 @@ const reload = () => {
   </ul>`
 }
 
-document.querySelector('#main').addEventListener('play', setHalfVolume);
-
 
 
