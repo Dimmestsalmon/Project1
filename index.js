@@ -1,24 +1,46 @@
 
 
 const getData = (inputValue) => {
-  fetch (`https://swapi.dev/api/people/?search=${inputValue}`)
-  .then(response => response.json())
-  .then(jsonData => document.querySelector("body").innerHTML +=
-    `<ul>
-      <li>Name: ${jsonData.results[0].name}</li>
-      <li>Height: ${jsonData.results[0].height}</li>
-      <li>Eye: ${jsonData.results[0].eye_color}</li>`,
-        fetch (jsonData.results[0].homeworld)
+  fetch(`https://swapi.dev/api/people/?search=${inputValue}`)
+    .then(response => response.json())
+    .then(jsonData => {
+      const person = jsonData.results[0];
+      return fetch(person.homeworld)
         .then(response => response.json())
-        .then(jsonData => document.querySelector("body").innerHTML +=
-      `<li>Home World: ${jsonData.results[0].name}</li>
+        .then(homeWorldData => {
+          document.querySelector("body").innerHTML +=
+          `<ul>
+              <li>Name: ${person.name}</li>
+              <li>Height: ${person.height}</li>
+              <li>Eye Color: ${person.eye_color}</li>
+              <li class = "homeworld"> Homeworld: ${homeWorldData.name}</li>
+            </ul>`
+            console.log(person.homeworld)
+            document.querySelector(".homeworld").addEventListener('click', function(){
+              loadPlanet(person.homeworld)
+            })
+        })
+    })
+};
+
+const loadPlanet = (input) => {
+  fetch(input)
+  .then (response => response.json())
+  .then (homeWorld => {
+    document.querySelector("body").innerHTML +=
+      `<ul>
+        <li>Name: ${homeWorld.name}</li>
+        <li>Terrain: ${homeWorld.terrain}</li>
+        <li>Population: ${homeWorld.population}</li>
       </ul>`
-        )
-    )
+  })
 }
 
 const searchData = () => {
   let inputValue = document.querySelector("#searchField").value;
   return inputValue
 }
+
+
+
 
