@@ -4,16 +4,17 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Star Wars Searcher</title>
+  <link rel="stylesheet" href="style.css">
   <script defer src="./index.js"></script>
 </head>
 <body>
   <h1>Welcome to the Star Wars Searcher</h1>
-  <form>
-    <input id="searchField" type="text" oninput="searchData()"/>
+  <form id="searchForm">
+    <input id="searchField" type="text" oninput="searchData()" value = "Jar Jar Binks"/>
     <button id="searchButton" type="button" onclick = "getData(searchData())">Search</button>
+    <button id="clearButton" type="button" onClick="window.location.reload();">Clear Search Data</button>
   </form>
-  <ul id = "newList">
 
-  </ul>
 </body>
+<audio play src ="./mainTheme.mp3"/>
 </html>

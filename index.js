@@ -15,9 +15,8 @@ const getData = (inputValue) => {
               <li>Eye Color: ${person.eye_color}</li>
               <li class = "homeworld"> Homeworld: ${homeWorldData.name}</li>
             </ul>`
-            console.log(person.homeworld)
-            document.querySelector(".homeworld").addEventListener('click', function(){
-              loadPlanet(person.homeworld)
+          document.querySelector(".homeworld").addEventListener('click', function(){
+            loadPlanet(person.homeworld)
             })
         })
     })
@@ -34,6 +33,7 @@ const loadPlanet = (input) => {
         <li>Population: ${homeWorld.population}</li>
       </ul>`
   })
+  document.querySelector(".homeworld").className = "homeworlds"
 }
 
 const searchData = () => {
