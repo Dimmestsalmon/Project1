@@ -61,9 +61,10 @@ ul{
 
 }
 li{
+
   color: #ffe81f;
   font-size: 2.5rem;
-  list-style-type: '*';
+  list-style-type: square;
 
 }
 
