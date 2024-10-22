@@ -21,7 +21,6 @@ const getData = (inputValue) => {
     })
 }
 
-
 const loadPlanet = (input) => {
   fetch(input)
   .then (response => response.json())
