@@ -23,8 +23,8 @@ h1{
   width: 300px;
   height: 50px;
   margin-right: 10px;
-  background-image: url('./searchImage.jpg');
-  background-size: 40px 40px;
+  background-image: url('./searchImage.png');
+  background-size: 50px 50px;
   background-position: 5px center;
   background-repeat: no-repeat;
   padding-left: 60px;
@@ -57,7 +57,12 @@ ul{
 li{
   color: #ffe81f;
   font-size: 2.5rem;
-  list-style-type: georgian;
+  list-style: none;
+}
+
+li::before {
+  content: url('./listImage.png');
+
 }
 
 .homeworld{

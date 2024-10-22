@@ -1,5 +1,3 @@
-
-
 const getData = (inputValue) => {
   document.querySelector("#newList").innerHTML = `<iframe src="https://giphy.com/embed/4JU2k4gyxE0vSzf64D" width="480" height="319" style="" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><p><a href="https://giphy.com/gifs/reaction-mood-4JU2k4gyxE0vSzf64D">via GIPHY</a></p>`
   fetch(`https://swapi.dev/api/people/?search=${inputValue}`)
