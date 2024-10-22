@@ -20,11 +20,33 @@ h1{
 }
 
 #searchField{
+  font-size: 24px;
   justify-content: center;
   width: 300px;
-  height: 25px;
+  height: 50px;
+  margin-right: 10px;
+  background-image: url('./searchImage.jpg');
+  background-size: 40px 40px;
+  background-position: 5px center;
+  background-repeat: no-repeat;
+  padding-left: 60px;
+
 }
 
+#searchButton{
+  background-color: black;
+  font-size: 20px;
+  color: white;
+  border-radius: 15%;
+  padding: 4px 24px;
+  border: 3px solid red;
+  transition-duration: 1s;
+}
+
+#searchButton:hover {
+  background-color: red;
+  color: black;
+}
 
 ul{
   padding: 3rem;
@@ -32,12 +54,17 @@ ul{
   margin: auto;
   height: 100%;
   width: 40em;
+  font-family: 'Star Wars', sans-serif;
+
+
+
 
 }
 li{
-  color: white;
+  color: #ffe81f;
   font-size: 2.5rem;
   list-style-type: '*';
+
 }
 
 

@@ -1,7 +1,7 @@
 
 
 const getData = (inputValue) => {
-  document.querySelector("#newList").innerHTML = `<iframe src="https://giphy.com/embed/J6Nj4TzJWtyWk" width="480" height="269" style="" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><p><a href="https://giphy.com/gifs/star-trek-lasers-sausage-J6Nj4TzJWtyWk">via GIPHY</a></p>`
+  document.querySelector("#newList").innerHTML = `<iframe src="https://giphy.com/embed/4JU2k4gyxE0vSzf64D" width="480" height="319" style="" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><p><a href="https://giphy.com/gifs/reaction-mood-4JU2k4gyxE0vSzf64D">via GIPHY</a></p>`
   fetch(`https://swapi.dev/api/people/?search=${inputValue}`)
     .then(response => response.json())
     .then(jsonData => {
@@ -19,7 +19,8 @@ const getData = (inputValue) => {
             })
         })
     })
-};
+}
+
 
 const loadPlanet = (input) => {
   fetch(input)
@@ -39,4 +40,3 @@ const searchData = () => {
   let inputValue = document.querySelector("#searchField").value;
   return inputValue
 }
-
